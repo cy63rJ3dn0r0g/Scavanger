@@ -29,7 +29,7 @@
     top: 169px;
   } */
   .blocked {
-    background: rgba(7, 7, 7, 1);
+    background: rgba(0, 0, 0, .9);
     width: 300px;
     height: 350px;
     position: absolute;

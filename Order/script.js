@@ -4,6 +4,8 @@ let lastClickedImage = null;
 let leatherSelectedImages = [];
 let paperSelectedImages = [];
 let emblemSelectedImages = [];
+let lbe = "Leather"; // Initialize lbe with the default category name
+
 
 let nextBtn = document.querySelector(".nextBtn");
 nextBtn.disabled = true;
@@ -17,7 +19,7 @@ function addBlockedDivsToOtherImages(item, clickedImage) {
         const customSrc = "/Offers/assets/block.jpg";
         const newBlockedDiv = document.createElement("div");
         newBlockedDiv.classList.add("blocked", "visible");
-        newBlockedDiv.style.backgroundImage = url(`${customSrc}`);
+newBlockedDiv.style.backgroundImage = `url(${customSrc})`;
         image.parentElement.appendChild(newBlockedDiv);
       }
     }
@@ -58,45 +60,56 @@ function initLeatherItems() {
       let clickCount = 0;
 
       const onImageEnter = (event) => {
-        const otherImages = Array.from(images).filter((otherImage) => otherImage!== image && otherImage.dataset.clicked!== "true");
+        const clicked = image.dataset.clicked === "true";
       
-        if (otherImages.length > 0) {
-          otherImages.forEach((otherImage) => {
-            otherImage.classList.add("selected-image");
-            otherImage.dataset.clicked = "true";
-            const otherBio = otherImage.nextElementSibling;
-            const otherBlockedDiv = otherImage.parentElement.querySelector(".blocked");
-            otherBio.style.display = "none";
-            bio.style.display = "flex";
-            otherBlockedDiv.style.display = "block";
-            // addToOrder(item.querySelector(".itemSummary")); if clicked on image && on next,then addToOrder.
-          });
+        if (!clicked) {
+          const otherImages = Array.from(images).filter((otherImage) => otherImage !== image && otherImage.dataset.clicked !== "true");
+        
+          if (otherImages.length > 0) {
+            otherImages.forEach((otherImage) => {
+              otherImage.classList.add("selected-image");
+              otherImage.dataset.clicked = "true";
+              const otherBio = otherImage.nextElementSibling;
+              const otherBlockedDiv = otherImage.parentElement.querySelector(".blocked");
+              otherBio.style.display = "none";
+              bio.style.display = "flex";
+              otherBlockedDiv.style.display = "block";
+              // addToOrder(item.querySelector(".itemSummary")); if clicked on image && on next,then addToOrder.
+            });
+          }
         }
       };
 
       const onImageLeave = (event) => {
-        const otherImages = Array.from(images).filter((otherImage) => otherImage !== image && otherImage.dataset.clicked === "true");
+        const clicked = image.dataset.clicked === "true";
+        nextBtn.disabled = false;
+
+      
+        if (!clicked) {
+          const otherImages = Array.from(images).filter(
+            (otherImage) => otherImage !== image && otherImage.dataset.clicked !== "true"
+          );
         
-        if (otherImages.length > 0) {
-          otherImages.forEach((otherImage) => {
-            if (otherImage.dataset.clicked === "true") {
+          if (otherImages.length > 0) {
+            otherImages.forEach((otherImage) => {
+              otherImage.classList.remove("selected-image");
+              otherImage.dataset.clicked = "false";
+              const otherBio = otherImage.nextElementSibling;
               const otherBlockedDiv = otherImage.parentElement.querySelector(".blocked");
+              otherBio.style.display = "none";
               otherBlockedDiv.style.display = "none";
-            }
-          });
-        } else {
-          images.forEach((otherImage) => {
-            otherImage.classList.remove("selected-image");
-            otherImage.dataset.clicked = "false";
-            const otherBio = otherImage.nextElementSibling;
-            const otherBlockedDiv = otherImage.parentElement.querySelector(".blocked");
-            otherBio.style.display = "none";
-            otherBlockedDiv.style.display = "none";
-          });
+            });
+          } else {
+            images.forEach((otherImage) => {
+              otherImage.dataset.clicked = "false";
+              const otherBio = otherImage.nextElementSibling;
+              const otherBlockedDiv = otherImage.parentElement.querySelector(".blocked");
+              otherBio.style.display = "none";
+              otherBlockedDiv.style.display = "none";
+            });
+          }
         }
       };
-      
-      
       function resetAll() {
         const images = document.querySelectorAll("img");
         images.forEach((image) => {
@@ -115,42 +128,43 @@ function initLeatherItems() {
       }
 
       const onImageClick = (event) => {
-        clickCount++;
+        const clicked = image.dataset.clicked === "true";
       
-        if (clickCount > 1) {
-          clickCount = 0;
-          image.dataset.clicked = "false"; // Reset the clicked state
-          blockedDiv.style.display = "block"; // Show the blocked overlay
+        if (!clicked) {
+          image.dataset.clicked = "true";
+          bio.style.display = "flex";
+          blockedDiv.style.display = "none";
         } else {
-          image.dataset.clicked = "true"; // Set the clicked state
-          blockedDiv.style.display = "none"; // Hide the blocked overlay
+          image.dataset.clicked = "false";
+          bio.style.display = "none";
+          blockedDiv.style.display = "block";
+
         }
       
-        bio.style.display = "flex";
-        resetAll();
+        const otherImages = Array.from(images).filter(
+          (otherImage) => otherImage !== image
+        );
       
-        const otherImages = Array.from(images).filter((otherImage) => otherImage !== image && otherImage.dataset.clicked !== "true");
-        if (otherImages.length > 0) {
-          otherImages.forEach((otherImage) => {
-            const otherBio = otherImage.nextElementSibling;
-            const otherBlockedDiv = otherImage.parentElement.querySelector(".blocked");
+        otherImages.forEach((otherImage) => {
+          const otherBio = otherImage.nextElementSibling;
+          const otherBlockedDiv = otherImage.parentElement.querySelector(".blocked");
+      
+          if (!clicked) {
+            otherImage.classList.remove("selected-image");
+            otherImage.dataset.clicked = "false";
             otherBio.style.display = "none";
             otherBlockedDiv.style.display = "block";
-            otherImage.classList.add("selected-image");
-          });
-        } else {
-          otherImages.forEach((otherImage) => {
-            const otherBio = otherImage.nextElementSibling;
-            const otherBlockedDiv = otherImage.parentElement.querySelector(".blocked");
+          } else {
+            otherImage.dataset.clicked = "true";
             otherBio.style.display = "none";
             otherBlockedDiv.style.display = "none";
-            otherImage.classList.add("selected-image");
-          });
-        }
+          }
+        });
       
         lastClickedImage = image;
-        nextBtn.disabled = false;
+        nextBtn.disabled = !clicked;
       };
+      
       
     
       image.removeEventListener("mouseenter", onImageEnter);
@@ -209,18 +223,31 @@ nextBtn.addEventListener("click", () => {
   currentItems.forEach((item) => {
     item.style.display = "none";
   });
+
   if (currentClass === "leather") {
+    lbe = "Leather"; // Update lbe to "Paper" when switching to the Paper category
     currentClass = "paper";
+    lbe = "Paper"; // Update lbe to "Paper" when switching to the Paper category
   } else if (currentClass === "paper") {
     currentClass = "emblem";
+    lbe = "Emblem"; // Update lbe to "Emblem" when switching to the Emblem category
   } else {
     currentClass = "form";
+    lbe = "Form"; // Update lbe to "Form" when switching to the Form category
   }
+
   const nextItems = document.querySelectorAll(`.${currentClass}`);
   nextItems.forEach((item) => {
     item.style.display = "flex";
   });
+
+  // Update the lbe text on the page
+  const lbeElements = document.querySelectorAll(".lbe");
+  lbeElements.forEach((element) => {
+    element.textContent = lbe;
+  });
 });
+
 
 const prevBtn = document.querySelector(".prevBtn");
 prevBtn.addEventListener("click", () => {

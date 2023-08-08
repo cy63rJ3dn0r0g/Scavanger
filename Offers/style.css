@@ -1,0 +1,249 @@
+* {
+  background-color: rgb(5, 5, 5);
+}
+
+.html {
+  width: 100%;
+  max-height: 1920px;
+  overflow: hidden;
+}
+.text {
+  font-size: 48px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  position: absolute;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: pointer;
+}
+.leather {
+  border: 1px solid white;
+  width: 1200px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 200px;
+  display: flex;
+  flex-direction: row;
+  background: none;
+}
+
+.paper {
+  border: 1px solid white;
+  width: 1200px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 600px;
+  display: flex;
+  overflow-y: hidden;
+  flex-direction: row;
+  white-space: nowrap;
+}
+.paper > div:hover .paperBio {
+  display: block;
+  overflow-y: visible;
+  z-index: 2; /* Increase z-index when hovered to appear above other elements */
+}
+
+.paperBio {
+  position: absolute;
+  top: calc(100% + 0px);
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  z-index: 1; /* Set initial z-index value */
+  text-align: center;
+}
+.emblem {
+  border: 1px solid white;
+  width: 1200px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1000px;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+
+.paperBio:hover {
+  overflow-y: visible;
+  z-index: 1;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+.paper ::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1b1b1b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dropDown img {
+  display: block;
+  margin-bottom: 0;
+  position: relative;
+  width: 75px;
+  height: 200px;
+  bottom: 69px;
+}
+
+.dropDownImg {
+  position: relative;
+  width: 75px;
+  height: 300px;
+  bottom: 309px;
+}
+
+.paper:hover .dropDown {
+  display: block;
+}
+.leatherBio {
+  top: -72px;
+}
+.leatherBio,
+.leatherBio,
+.paperBio,
+.emblemBio {
+  width: 299px;
+  height: 50px;
+  right: -1px;
+  font-size: 18px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  background: black;
+  display: none;
+  position: relative;
+  z-index: 1; /* Set initial z-index value */
+  text-align: center;
+border: none;
+
+}
+.paperBio {
+  top: -90px;
+}
+.emblemBio {
+  top: -100px;
+}
+.paperBio.visible {
+  display: block;
+}
+
+
+.orderBtn {
+  width: 150px;
+  height: 60px;
+  position: absolute;
+  bottom: -450px;
+  margin: 25px;
+  background: black;
+  right: 20px;
+  font-size: 38px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 10px;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid whitesmoke;
+}
+
+.leatherFullGrain:hover .leatherBio.bio1,
+.leatherTopGrain:hover .leatherBio.bio2,
+.leatherFauxGrain:hover .leatherBio.bio3,
+.leatherBondedGrain:hover .leatherBio.bio4,
+.greenPaper:hover .paperBio,
+.yellowPaper:hover .paperBio,
+.bluePaper:hover .paperBio,
+.paperWhite:hover .paperBio,
+.paperBlack:hover .paperBio,
+.paperRed:hover .paperBio,
+.pattern:hover .emblemBio {
+  display: block;
+  transform: scale(1.10);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.leatherName {
+  font-size: 48px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  display: flex;
+  top: 80px;
+  width: 300px;
+  left: 200px;
+  justify-content: start;
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: pointer;
+}
+.paperName {
+  font-size: 48px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  display: flex;
+  top: 380px;
+  width: 300px;
+  left: 200px;
+  justify-content: start;
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: pointer;
+}
+.emblemName {
+  font-size: 48px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  display: flex;
+  top: 680px;
+  width: 300px;
+  left: 200px;
+  justify-content: start;
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: pointer;
+}
+.footer {
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  color: aliceblue;
+  position: absolute;
+  bottom: -490px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: pointer;
+}

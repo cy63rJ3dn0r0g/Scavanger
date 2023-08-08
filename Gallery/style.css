@@ -1,0 +1,644 @@
+* {
+  background-color: rgb(5, 5, 5);
+}
+.html {
+  width: 100%;
+  max-height: 1920px;
+  overflow: hidden;
+}
+.text {
+  font-size: 48px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  position: absolute;
+  top: 69px;
+  left: 50%;
+  margin-left: -100px;
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: pointer;
+}
+.grid {
+  position: absolute;
+  left: 10vw;
+  width: 80vw;
+  right: 10vw;
+  height: 50vh;
+  top: 25%;
+  
+}
+.grid-wrapper.visible {
+  display: grid;
+}
+.grid-wrapper {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  position: absolute;
+  background: black;
+  grid-template-areas:
+  "photo1 photo3 photo5 photo7 photo9 photo11"
+  "photo2 photo4 photo6 photo8 photo10 photo12"
+;
+}
+.photo1 {
+  grid-area: photo1;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+  background-image: url('https://i.ibb.co/nR46jCP/1.jpg');
+}
+.photo2 {
+  grid-area: photo2;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+  background-image: url('https://i.ibb.co/JsKdKV8/2.jpg');
+}
+.photo3 {
+  grid-area: photo3;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+  background-image: url("https://i.ibb.co/rKjJmxX/4.jpg");
+}
+.photo4 {
+  grid-area: photo4;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-image: url("https://i.ibb.co/ZHb2wHG/9.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo5 {
+  grid-area: photo5;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-image: url("https://i.ibb.co/7SM2Yj4/5.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo6 {
+  grid-area: photo6;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-image: url("https://i.ibb.co/mc0Zn3C/6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo7 {
+  grid-area: photo7;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-image: url("https://i.ibb.co/2WPy8zL/8.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo8 {
+  grid-area: photo8;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-image: url("https://i.ibb.co/48w0t2Y/7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo9 {
+  grid-area: photo9;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-image: url('https://i.ibb.co/1Gfq2K9/3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo10 {
+  grid-area: photo10;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  background-image: url("https://i.ibb.co/L5P2gkd/10.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo11 {
+  grid-area: photo11;
+  border: 1px solid white;
+  height: 250px;
+  width: 200px;
+  left: 0;
+  background-image: url("https://i.ibb.co/4K3k30w/11.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo12 {
+  grid-area: photo12;
+  border: 1px solid white;
+  height: 250px;
+  min-height: 150px;
+  width: 200px;
+  background-image: url("https://i.ibb.co/z44jysM/12.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: fill;
+}
+.photo1:hover {
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: 100px;
+  position: absolute;
+}
+.photo2:hover {
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: 100px;
+  position: absolute;
+}
+.photo3:hover {
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: -100px;
+  position: absolute;
+}
+.photo4:hover {
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 00px;
+  left: -100px;
+  position: absolute;
+}
+.photo5:hover {
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: 100px;
+  position: absolute;
+}
+.photo6:hover {
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: 100px;
+  position: absolute;
+}
+.photo7:hover {
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: -100px;
+  position: absolute;
+}
+.photo8:hover {
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: -100px;
+  position: absolute;
+}
+.photo9:hover {
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: 100px;
+  position: absolute;
+}
+.photo10:hover {
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: 100px;
+  position: absolute;
+}
+.photo11:hover {
+  animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: -100px;
+  position: absolute;
+}
+.photo12:hover {
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  top: 0px;
+  left: -100px;
+  position: absolute;
+}
+.photoScreen {
+  width: 1300px;
+  height: 700px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: rgba(243, 241, 241, 0.99);
+  z-index: 999;
+  top: -100px;
+  position: absolute;
+  display: none;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 5px #ffffffc9;
+}
+.photoScreen.visible {
+  display: block;
+}
+.photoView {
+  width: 970px;
+  height: 580px;
+  background: none;
+  top: 10px;
+  left: 10px;
+  position: absolute;
+  max-width: 80%;
+  max-height: 97%;
+}
+.photoPreview {
+  width: 300px;
+  height: 580px;
+  position: absolute;
+  background:  rgba(243, 241, 241, 0.99);
+  top: 10px;
+  right: 10px;
+  display: block;
+}
+.photoPreview.visible {
+  display: block;
+}
+/*active*/
+.photoFullScn {
+  position: absolute;
+  display: none;
+  top: -75px;
+  width: 85vw;
+  height: 80vh;
+  background: none;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 5px #ffff;
+}
+.photoFullScn.visible {
+  display: block;
+}
+.nextBtn,.prevBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  background: rgba(0, 0, 0, .9);
+  transform: translate(-50%);
+  width: 50px;
+  height: 50px;
+  margin:5px ;
+  border-radius: 50%;
+  color: whitesmoke;
+  font-weight:900;
+  z-index: 1;
+}
+.prevBtn {
+  left: 55%;
+}
+.nextBtn {
+  right: 65px;
+}
+.nextBtnFS,.prevBtnFS {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  background: rgba(0, 0, 0, .9);
+  transform: translate(-50%);
+  width: 50px;
+  height: 50px;
+  margin:5px ;
+  border-radius: 50%;
+  color: whitesmoke;
+  font-weight:900;
+}
+.prevBtnFS {
+  left: 55%;
+}
+.nextBtnFS {
+  right: 55%;
+}
+.exitBtnFS {
+  position: absolute;
+  display: none;
+  color: #ffff;
+  right: 15px;
+  top: 25px;
+  z-index: 1;
+  opacity: .8;
+  cursor: pointer;
+  color: whitesmoke;
+}
+.exitBtnFS.visible {
+  display: block;
+}
+.exitBtFSn::before {
+  display: block;
+}
+.exitBtnFS:hover {
+  opacity: 1;
+}
+.photo1-1 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1a.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo1-2 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1b.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo1-3 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1c.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo1-4 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1d.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo1-5 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1e.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo2-1 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1a.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo2-2 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1b.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo2-3 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1c.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo2-4 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1d.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo2-5 {
+  background: url(assets/skroz\ crni\ blok\ BLACK\ EDITION/1e.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo5-1 {
+  background: url(assets/White\ Edition/5a.jpg);
+  background-size: cover;
+  top: -11px;
+  position: absolute;
+  left: -35px;
+  width: 980px;
+  height: 582px;
+  border: 1px solid white;
+}
+.photo5-2 {
+  background: url(assets/White\ Edition/5b.jpg);
+  background-size: cover;
+  grid-area: 1 / 1 / 2 / 2;
+  height: 144px;
+  position: relative;
+  width: 300px;
+  top: -12px;
+  left: 540px;
+  border: 1px solid white;
+}
+.photo5-3 {
+  background: url(assets/White\ Edition/5c.jpg);
+  background-size: cover;
+  grid-area: 2 / 1 / 3 / 2;
+  height: 144px;
+  position: relative;
+  width: 300px;
+  left: 540px;
+  top: -12px;
+  border: 1px solid white;
+}
+.photo5-4 {
+  background: url(assets/White\ Edition/5d.jpg);
+  grid-area: 3 / 1 / 4 / 2;
+  background-size: cover;
+  height: 144px;
+  position: relative;
+  width: 300px;
+  left: 540px;
+  top: -12px;
+  border: 1px solid white;
+}
+.photo5-5 {
+  background: url(assets/White\ Edition/5e.jpg);
+  grid-area: 4 / 1 / 5 / 2;
+  background-size: cover;
+  position: relative;
+  width: 300px;
+  left: 540px;
+  height: 144px;
+  top: -12px;
+  border: 1px solid white;
+}
+.pic {
+  display: block;
+}
+.slideShow {
+  display: none;
+  width: 1000px;
+  height: 580px;
+  position: relative;
+}
+.slideShow.visible {
+  display: block;
+}
+.slides {
+  display: none;
+  width: 1000px;
+  height: 580px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.slides.visible {
+  display: flex;
+}
+.slides img {
+  background-size: contain;
+  width: 1000px;
+  height: 580px;
+  position: relative;
+}
+.photoView img { 
+  width: 975px;
+  height: 683px;
+  cursor: pointer;
+}
+.photoPreview img {
+  width: 300px;
+  height: 168px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.noPic {
+  display: none;
+}
+.exitBtn {
+  position: absolute;
+  display: none;
+  color: #ffff;
+  right: 15px;
+  top: 25px;
+  z-index: 1;
+  opacity: .8;
+  cursor: pointer;
+  color: whitesmoke;
+}
+.exitBtn.visible {
+  display: block;
+}
+.exitBtn::before {
+  display: block;
+}
+.exitBtn:hover {
+  opacity: 1;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.footer {
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  color: aliceblue;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+/* Add any additional styling as needed */
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+}
+/* slide show - end */
+@keyframes swing-in-top-fwd {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(-20px);
+      transform: translateY(63px);
+      opacity: 1;
+      scale: 2;
+
+    }
+  }
+  @keyframes swing-in-bottom-fwd {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(20px);
+      transform: translateY(-63px);
+      scale: 2;
+      opacity: 1;
+    }
+  }
+  

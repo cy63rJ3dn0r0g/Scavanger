@@ -137,8 +137,7 @@
   position: relative;
   z-index: 1; /* Set initial z-index value */
   text-align: center;
-border: none;
-
+  border: none;
 }
 .paperBio {
   top: -90px;
@@ -149,7 +148,6 @@ border: none;
 .paperBio.visible {
   display: block;
 }
-
 
 .orderBtn {
   width: 150px;
@@ -188,7 +186,7 @@ img:hover {
 .paperRed:hover .paperBio,
 .pattern:hover .emblemBio {
   display: block;
-  transform: scale(1.10);
+  transform: scale(1.1);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -246,4 +244,13 @@ img:hover {
   text-transform: uppercase;
   font-weight: 300;
   cursor: pointer;
+}
+::-webkit-scrollbar {
+  background: black;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 15px;
+  width: 10px; /* Adjust the width of the thumb */
 }

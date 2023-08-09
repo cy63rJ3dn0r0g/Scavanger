@@ -1,24 +1,23 @@
 * {
-    background-color: rgb(5, 5, 5);
-  }
-  .html {
-    width: 100%;
-    max-height: 1920px;
-    overflow: hidden;
-  }
-  .text {
-    font-size: 48px;
-    color: aliceblue;
-    font-family: "Courier New", Courier, monospace;
-    position: absolute;
-    top: 69px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-transform: uppercase;
-    font-weight: 300;
-    cursor: pointer;
-  }
-  /* .orderBox {
+  background-color: rgb(5, 5, 5);
+}
+.html {
+  width: 100%;
+  max-height: 1920px;
+}
+.text {
+  font-size: 48px;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  position: absolute;
+  top: 69px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-weight: 300;
+  cursor: default;
+}
+/* .orderBox {
     width: 700px;
     height: 700px;
     border: 1px solid whitesmoke;
@@ -28,31 +27,41 @@
     transform: translateX(-50%);
     top: 169px;
   } */
-  .blocked {
-    background: rgba(0, 0, 0, .9);
-    width: 300px;
-    height: 350px;
-    position: absolute;
-    opacity: .69;
-    top: 0px;
-    z-index: 1;
-    display: none;
-  }
-  .visible {
-    display: block;
-  }
-  img {
-    width: 300px;
-    height: 350px;
-  }
-  .leather {
+.blocked {
+  background: rgba(0, 0, 0, 0.9);
+  width: 300px;
+  height: 350px;
+  position: absolute;
+  opacity: 0.69;
+  top: 0px;
+  z-index: 1;
+  display: none;
+}
+.visible {
+  display: block;
+}
+img {
+  width: 300px;
+  height: 350px;
+}
+.paper .paper-content {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll; /* Use overflow-y instead of overflow */
+}
+.paper .paper-content > * {
+  width: 300px;
+  height: 350px;
+  flex-shrink: 0; 
+}
+.leather {
   border: 1px solid white;
   width: 1200px;
   height: 350px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 200px;
+  top: 50px;
   display: flex;
   flex-direction: row;
   background: none;
@@ -65,12 +74,12 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 200px;
+  top: 50px;
   display: flex;
   flex-direction: row;
   background: none;
   display: none;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .emblem {
   border: 1px solid white;
@@ -79,7 +88,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 200px;
+  top: 50px;
   display: flex;
   flex-direction: row;
   background: none;
@@ -101,7 +110,7 @@
 .bio {
   display: none;
   transform: translate(200px);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .nextBtn {
   width: 125px;
@@ -116,7 +125,7 @@
 .nextBtn:active,
 .prevBtn:active {
   box-shadow: inset 0 0 10px 1px antiquewhite;
- }
+}
 .prevBtn {
   width: 125px;
   height: 50px;
@@ -129,27 +138,97 @@
 }
 .selected-image {
   border: 1px solid white;
-  transition: all .8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+.item { 
+  width: 1250px;
+  height: 420px;
+  background: none;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .lbe {
-  width: 500px;
-  height: 30px;
+  width: 100%;
   position: absolute;
-  top: 135px;
-  left: 75px;
-  font-size: 24px;
+  height: 40px;
+  top: -50px;
+  left: 2vw;
+  text-align: justify;
+  font-size: 46px;
   color: aliceblue;
   font-family: "Courier New", Courier, monospace;
+  text-transform: uppercase;
   font-weight: 300;
+  cursor: default;
+  background: none;
+}
+form {
+  border: 1px solid white;
+  width: 600px;
+  height: 350px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 26vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+  box-shadow: inset 0 0 10px 1px white;
+}
+.name,
+.address,
+.contact {
+  border: none;
+  width: 96%;
+  font-size: 28px;
+  font-family: "Courier New", Courier, monospace;
+  color: aliceblue;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  height: 75px;
+  background: none;
+}
+::placeholder {
+  color : aliceblue;
+  text-align: center;
+}
+.buttonSub {
+  width: 125px;
+  height: 50px;
+  position: absolute;
+  bottom: 250px;
+  right: 325px;
+  color: antiquewhite;
+  font-size: 28px;
+  border-radius: 10px;
 }
 .footer {
-    font-size: 24px;
-    font-family: "Courier New", Courier, monospace;
-    color: aliceblue;
-    position: absolute;
-    bottom: 1px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-transform: uppercase;
-    font-weight: 300;
-  }
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  color: aliceblue;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-weight: 300;
+}
+::-webkit-scrollbar {
+  background: black;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: white;
+  border-radius: 15px;
+}
+.paper .paper-content::-webkit-scrollbar-thumb:vertical {
+  display: none;
+}

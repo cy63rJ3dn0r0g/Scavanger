@@ -55,7 +55,6 @@ function openPhotoScreen(event) {
     }
   }
   
-
   function updatePhotoView(index) {
     photoView.innerHTML = '';
     photoView.appendChild(subphotos[index].cloneNode(true));
@@ -93,8 +92,6 @@ function openPhotoScreen(event) {
   }
 
   showPhotoView();
-
-  // Add event listeners for next/prev buttons and photo preview
   nextBtn.addEventListener('click', nextSubphoto);
   window.addEventListener('keydown', function(e) {
     if (e.keyCode === 39) {
@@ -115,12 +112,9 @@ function openPhotoScreen(event) {
     }
   });
 
-
-  // Add event listener for full screen button
   fullScreenBtn.addEventListener('click', toggleFullScreen);
 }
 
-// Event listeners
 exitBtn.addEventListener('click', exitHandler);
 window.addEventListener('keydown', function(e) {
   if(e.keyCode === 27) {
@@ -133,3 +127,34 @@ photos.forEach((photo) => {
   photo.addEventListener('click', openPhotoScreen);
 });
 
+const menuBarNav = document.querySelector(".menuBar");
+const menuNav = document.querySelector(".menuNav");
+menuNav.addEventListener("mouseenter", () => {
+  menuBarNav.classList.add("moved");
+});
+menuNav.addEventListener("mouseleave", () => {
+  menuBarNav.classList.remove("moved");
+});
+
+const biographyBarBtn = document.querySelector(".bioBar");
+biographyBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Bio/Biography.html";
+});
+const homeBarBtn = document.querySelector(".homeBar");
+
+homeBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/index.html";
+});
+const offersBarBtn = document.querySelector(".offersBar");
+offersBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Offers/Offers.html";
+});
+const orderBarBtn = document.querySelector(".orderBar");
+
+orderBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Order/Order.html";
+});

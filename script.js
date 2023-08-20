@@ -22,7 +22,8 @@ const biography = document.querySelectorAll(".biography");
 
 const handleScroll = () => {
   const scrolled = window.scrollY;
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight - scrolled;
+  const scrollable =
+    document.documentElement.scrollHeight - window.innerHeight - scrolled;
 
   const handleSlide = (elements, trigger) => {
     elements.forEach((element) => {
@@ -42,33 +43,60 @@ const handleScroll = () => {
 };
 
 const hintHdl = () => {
-  const guide = document.querySelector('.guide');
-  const someTime = 10000; // 10 seconds
-  let timeoutId; // variable to store the timeout ID
+  const guide = document.querySelector(".guide");
+  const someTime = 10000;
+  let timeoutId;
 
-  // Check if the user has stopped scrolling for 10 seconds
   const checkScroll = () => {
-    const scrolling = window.scrollY; // capture the current scroll position
+    const scrolling = window.scrollY;
     if (scrolling === 0 || scrolling < 150) {
-      clearTimeout(timeoutId); // clear the timeout if the user starts scrolling again
-      guide.classList.add('visible');
+      clearTimeout(timeoutId);
+      guide.classList.add("visible");
       timeoutId = setTimeout(() => {
-        guide.classList.remove('visible');
-      }, 4200); // set a new timeout to hide the hint or guide after 4.20 seconds
+        guide.classList.remove("visible");
+      }, 4200);
     } else {
-      timeoutId = setTimeout(checkScroll, someTime); // set a new timeout to check again in 10 seconds
+      timeoutId = setTimeout(checkScroll, someTime);
     }
   };
 
-  // Start the check for scrolling
   timeoutId = setTimeout(checkScroll, someTime);
 };
 
-// Call handleScroll whenever the window is scrolled
 window.addEventListener("scroll", debounce(handleScroll));
 
-// Initial call to handleScroll on page load
 handleScroll();
 
-// Call hintHdl to start checking for scroll position
 hintHdl();
+
+const menuBarNav = document.querySelector(".menuBar");
+const menuNav = document.querySelector(".menuNav");
+menuNav.addEventListener("mouseenter", () => {
+  menuBarNav.classList.add("moved");
+});
+menuNav.addEventListener("mouseleave", () => {
+  menuBarNav.classList.remove("moved");
+});
+
+const biographyBarBtn = document.querySelector(".bioBar");
+biographyBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Bio/Biography.html";
+});
+const galleryBarBtn = document.querySelector(".galleryBar");
+
+galleryBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Gallery/Gallery.html";
+});
+const offersBarBtn = document.querySelector(".offersBar");
+offersBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Offers/Offers.html";
+});
+const orderBarBtn = document.querySelector(".orderBar");
+
+orderBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Order/Order.html";
+});

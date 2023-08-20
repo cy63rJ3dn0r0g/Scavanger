@@ -25,7 +25,6 @@
   right: 10vw;
   height: 50vh;
   top: 25%;
-  
 }
 .grid-wrapper.visible {
   display: grid;
@@ -42,9 +41,8 @@
   position: absolute;
   background: black;
   grid-template-areas:
-  "photo1 photo3 photo5 photo7 photo9 photo11"
-  "photo2 photo4 photo6 photo8 photo10 photo12"
-;
+    "photo1 photo3 photo5 photo7 photo9 photo11"
+    "photo2 photo4 photo6 photo8 photo10 photo12";
 }
 .photo1 {
   grid-area: photo1;
@@ -55,7 +53,7 @@
   background-size: cover;
   background-position: center;
   object-fit: fill;
-  background-image: url('https://i.ibb.co/nR46jCP/1.jpg');
+  background-image: url("https://i.ibb.co/nR46jCP/1.jpg");
 }
 .photo2 {
   grid-area: photo2;
@@ -66,7 +64,7 @@
   background-size: cover;
   background-position: center;
   object-fit: fill;
-  background-image: url('https://i.ibb.co/JsKdKV8/2.jpg');
+  background-image: url("https://i.ibb.co/JsKdKV8/2.jpg");
 }
 .photo3 {
   grid-area: photo3;
@@ -140,7 +138,7 @@
   border: 1px solid white;
   height: 250px;
   width: 200px;
-  background-image: url('https://i.ibb.co/1Gfq2K9/3.jpg');
+  background-image: url("https://i.ibb.co/1Gfq2K9/3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -188,7 +186,8 @@
   position: absolute;
 }
 .photo2:hover {
-  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
   top: 0px;
   left: 100px;
   position: absolute;
@@ -200,7 +199,8 @@
   position: absolute;
 }
 .photo4:hover {
-  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
   top: 00px;
   left: -100px;
   position: absolute;
@@ -212,7 +212,8 @@
   position: absolute;
 }
 .photo6:hover {
-  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
   top: 0px;
   left: 100px;
   position: absolute;
@@ -224,7 +225,8 @@
   position: absolute;
 }
 .photo8:hover {
-  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
   top: 0px;
   left: -100px;
   position: absolute;
@@ -236,7 +238,8 @@
   position: absolute;
 }
 .photo10:hover {
-  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
   top: 0px;
   left: 100px;
   position: absolute;
@@ -248,7 +251,8 @@
   position: absolute;
 }
 .photo12:hover {
-  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-bottom-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
   top: 0px;
   left: -100px;
   position: absolute;
@@ -283,7 +287,7 @@
   width: 300px;
   height: 580px;
   position: absolute;
-  background:  rgba(243, 241, 241, 0.99);
+  background: rgba(243, 241, 241, 0.99);
   top: 10px;
   right: 10px;
   display: block;
@@ -306,18 +310,19 @@
 .photoFullScn.visible {
   display: block;
 }
-.nextBtn,.prevBtn {
+.nextBtn,
+.prevBtn {
   position: absolute;
   bottom: 10px;
   left: 50%;
-  background: rgba(0, 0, 0, .9);
+  background: rgba(0, 0, 0, 0.9);
   transform: translate(-50%);
   width: 50px;
   height: 50px;
-  margin:5px ;
+  margin: 5px;
   border-radius: 50%;
   color: whitesmoke;
-  font-weight:900;
+  font-weight: 900;
   z-index: 1;
 }
 .prevBtn {
@@ -326,18 +331,19 @@
 .nextBtn {
   right: 65px;
 }
-.nextBtnFS,.prevBtnFS {
+.nextBtnFS,
+.prevBtnFS {
   position: absolute;
   bottom: 10px;
   left: 50%;
-  background: rgba(0, 0, 0, .9);
+  background: rgba(0, 0, 0, 0.9);
   transform: translate(-50%);
   width: 50px;
   height: 50px;
-  margin:5px ;
+  margin: 5px;
   border-radius: 50%;
   color: whitesmoke;
-  font-weight:900;
+  font-weight: 900;
 }
 .prevBtnFS {
   left: 55%;
@@ -352,7 +358,7 @@
   right: 15px;
   top: 25px;
   z-index: 1;
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
   color: whitesmoke;
 }
@@ -548,7 +554,7 @@
   height: 580px;
   position: relative;
 }
-.photoView img { 
+.photoView img {
   width: 975px;
   height: 683px;
   cursor: pointer;
@@ -569,7 +575,7 @@
   right: 15px;
   top: 25px;
   z-index: 1;
-  opacity: .8;
+  opacity: 0.8;
   cursor: pointer;
   color: whitesmoke;
 }
@@ -581,6 +587,70 @@
 }
 .exitBtn:hover {
   opacity: 1;
+}
+.menuBar {
+  width: 100px;
+  height: 400px;
+  position: fixed;
+  left: -50px;
+  top: 25vh;
+  border: 1px white solid;
+  display: flex;
+  flex-direction: column;
+  opacity: 0.3;
+}
+.menuBar.moved {
+  left: 0;
+  transition: all 10s ease-in-out forwards;
+  position: fixed;
+  top: 25vh;
+  border: 1px white solid;
+  opacity: 0.99;
+  -webkit-animation: bounce-in-left 1.1s both;
+  animation: bounce-in-left 1.1s both;
+}
+.homeBar {
+  width: 100px;
+  height: 100px;
+  background: url("/assets/HomeBar.png");
+  background-position: center;
+  background-size: cover;
+}
+.galleryBar {
+  width: 100px;
+  height: 100px;
+  background: url(/assets/galleryBar.png);
+  background-position: center;
+  background-size: cover;
+}
+.bioBar {
+  width: 100px;
+  height: 100px;
+  background: url(/assets/BioBar.png);
+  background-position: center;
+  background-size: cover;
+}
+.offersBar {
+  width: 100px;
+  height: 100px;
+  background: url(/assets/OfferBar.png);
+  background-position: center;
+  background-size: cover;
+}
+.orderBar {
+  width: 100px;
+  height: 100px;
+  background: url(/assets/orderBar.png);
+  background-position: center;
+  background-size: cover;
+}
+.galleryBar:hover,
+.homeBar:hover,
+.offersBar:hover,
+.orderBar:hover,
+.bioBar:hover {
+  transform: scale(1.2);
+  transition: all .4s ease-in;
 }
 /* Fading animation */
 .fade {
@@ -598,7 +668,6 @@
   text-transform: uppercase;
   font-weight: 300;
 }
-/* Add any additional styling as needed */
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -607,7 +676,6 @@
     opacity: 1;
   }
 }
-/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev,
   .next,
@@ -617,28 +685,26 @@
 }
 /* slide show - end */
 @keyframes swing-in-top-fwd {
-    0% {
-      transform: translateX(0);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(-20px);
-      transform: translateY(63px);
-      opacity: 1;
-      scale: 2;
-
-    }
+  0% {
+    transform: translateX(0);
+    opacity: 0;
   }
-  @keyframes swing-in-bottom-fwd {
-    0% {
-      transform: translateX(0);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(20px);
-      transform: translateY(-63px);
-      scale: 2;
-      opacity: 1;
-    }
+  100% {
+    transform: translateY(-20px);
+    transform: translateY(63px);
+    opacity: 1;
+    scale: 2;
   }
-  
+}
+@keyframes swing-in-bottom-fwd {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(20px);
+    transform: translateY(-63px);
+    scale: 2;
+    opacity: 1;
+  }
+}

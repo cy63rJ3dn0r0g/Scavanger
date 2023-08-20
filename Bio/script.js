@@ -21,7 +21,7 @@ form.addEventListener('submit', (event) => {
       "<br> Message: " + message
   }).then(message => {
     alert("I wii get in touch as soon as i can");
-    form.reset(); // Reset the form to clear the input fields
+    form.reset(); 
   });
 });
 
@@ -36,3 +36,42 @@ envelope.addEventListener('click', () => {
 instagram.addEventListener('click', () => {
   window.open('https://instagram.com/scavengeruniquebooks?igshid=NTc4MTIwNjQ2YQ==')
 })
+
+
+const menuBarNav = document.querySelector('.menuBar');
+const menuNav = document.querySelector('.menuNav')
+menuNav.addEventListener('mouseenter', () => {
+  menuBarNav.classList.add('moved');
+})
+menuNav.addEventListener('mouseleave', () => {
+  menuBarNav.classList.remove('moved');
+})
+const orderBtn = document.querySelector(".orderBar");
+orderBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Order/Order.html";
+});
+
+const offersBarBtn = document.querySelector('.offersBar');
+offersBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Offers/Offers.html";
+});
+const galleryBarBtn = document.querySelector('.galleryBar');
+
+galleryBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Gallery/Gallery.html";
+});
+const homeBarBtn = document.querySelector('.homeBar');
+
+homeBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Index.html";
+});
+const orderBarBtn = document.querySelector('.orderBar');
+
+orderBarBtn.addEventListener("click", () => {
+  console.log("Button clicked");
+  window.location.href = "/Order/Order.html";
+});
